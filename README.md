@@ -152,4 +152,5 @@ demo/
 - Event Captions for each node are organized into a multi-level tree structure (Visual-Audio-Speech).
 - Multi-level captions are leveraged to generate structured metadata (Tags, Objects, Actors, etc.).
 - The generated metadata enables efficient and precise query search and information retrieval.
+  
 ![sample figure](asset/sample.png)
