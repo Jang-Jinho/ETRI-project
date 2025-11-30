@@ -41,10 +41,10 @@ sudo apt install -y ffmpeg yt-dlp
 ```
 
 ## Data Setup
-- `annotation.json`, `prompt.json`, (`video.mp4`, `audio.wav`) 필요합니다. 
-- `annotation.json`: video id (YouTube id)와 duration이 포함되어 있어야 합니다. 
-- `prompt.json`: Node Captioning 과정에서 입력되는 프롬프트가 포함되어 있습니다. 
-- `audio.wav`: `video.mp4`로부터 오디오를 추출해주셔야 합니다 (ffmpeg 이용).
+- `annotation.json`, `prompt.json`, (`video.mp4`, `audio.wav`) are required.
+- `annotation.json`: Must include the video id (YouTube id) and duration.
+- `prompt.json`: Contains the prompt input during the Node Captioning process.
+- `audio.wav`: Audio must be extracted from `video.mp4` (using ffmpeg).
 ```shell
 # Tree Feature Extraction (features_tree)
 # Type: all, video, audio, speech
@@ -57,7 +57,7 @@ bash scripts/features_tree.sh <TYPE>
 bash scripts/features_longvale.sh <TYPE>
 ```
 
-`data` 디렉터리 구성 예시는 다음과 같습니다.
+`data` directory is as follows:
 
 ```text
 data/
@@ -88,7 +88,7 @@ data/
 - LongVALE: Download [Vicuna v1.5](https://huggingface.co/lmsys/vicuna-7b-v1.5) and [vtimellm_stage1](https://huggingface.co/datasets/ttgeng233/LongVALE/blob/main/checkpoints/vtimellm_stage1_mm_projector.bin) weights.
 - LongVALE: Download LongVALE-LLM model from [longvalellm-vicuna-v1-5-7b.tar.gz](https://huggingface.co/datasets/ttgeng233/LongVALE/resolve/main/checkpoints/longvalellm-vicuna-v1-5-7b.tar.gz).
   
-`checkpoints` 디렉터리 구성 예시는 다음과 같습니다.
+`checkpoints` directory is as follows:
 
 ```text
 checkpoints/
@@ -114,7 +114,7 @@ Input: Video file (.mp4)
 ```shell
 bash scripts/run_demo.sh <VIDEO_ID> <QUERY>
 ```
-`scripts/run_demo.sh` 에서 사용하는 예시 데이터/출력 경로는 다음과 같습니다.
+The data/output paths used in `scripts/run_demo.sh` are as follows:
 
 ```text
 data/
@@ -136,7 +136,7 @@ Input: Video link (URL)
 ```shell
 bash scripts/run_demo_url.sh <VIDEO_LINK> <QUERY>
 ```
-`scripts/run_demo_url.sh` 에서 사용하는 예시 데이터/출력 경로는 다음과 같습니다.
+The data/output paths used in `scripts/run_demo_url.sh` are as follows:
 
 ```text
 data/
@@ -151,7 +151,7 @@ demo/
 ```
 
 ## Example Result
-- Each node contains Visual-Audio-Speech event captions. These captions are organized into a Tree structure consisting of multiple levels.
-- These multi-level captions are leveraged to generate structured metadata, including key information such as Tags, Objects, and Actors.
-- The generated metadata enables efficient and precise query search and advanced information retrieval.
+- Event Captions for each node are organized into a multi-level tree structure (Visual-Audio-Speech).
+- Multi-level captions are leveraged to generate structured metadata (Tags, Objects, Actors, etc.).
+- The generated metadata enables efficient and precise query search and information retrieval.
 ![sample figure](asset/sample.png)
