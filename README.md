@@ -1,6 +1,6 @@
 # ETRI Project
 
-멀티모달 AI 기반 미디어 핵심 정보 분석 및 요약 기술
+멀티모달 AI 기반 미디어 핵심 정보 분석 및 요약 기술 (2025/07/16 ~ 2025/11/30)
 
 ## Environment Setup
   LongVALE: https://github.com/ttgeng233/LongVALE
